@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+  <body >
+
+<nav   class="navbar navbar-default">
+     <center>
+         {% load static %}
+         <center>      <img src="{% static 'accounts/imgs.jpg' %}"  height="300" width="1500"></center>
+<br>
+
+<br>
+       <h1> <strong>نظام ألي لتحليل الرأي  باللهجة التونسية في وسائل التواصل الاجتماعي</strong></h1>
+             {% load static %}
+             <br>
+     <h1>    <strong> O</strong>pinion <strong> A</strong>nalysis <strong>S</strong>ystem  for  <strong>T</strong>unisian <strong>D</strong>ialect in social media : <strong> OAS-TD</strong></h1></center>
+
+{% load static %}
+</nav>
+
+<style>
+
+.container {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin-left:170px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:900px;
+  padding:10px;
+  text-align: center;
+}
+.button {
+
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.heading {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+}
+
+.frm {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+  font-size: 20px;
+
+
+}
+.result1.result {
+  border-radius: 25px;
+  margin-left:90px;
+  border:1px solid #eee;
+  padding:10px;
+  width:400px;
+  text-align: center;
+  font-size: 40px;
+}
+.result2{
+  background-color:  #DCDCDC;
+  color: Black;
+   border-radius: 25px;
+  margin-left:90px;
+  border:1px solid #eee;
+  padding:10px;
+  width:700px;
+  text-align: center;
+  font-size: 40px;
+}
+.twt{
+border-radius: 25px;
+  border-radius: 25px;
+  margin-left:90px;
+  border:1px solid #eee;
+  padding:20px;
+  width:400px;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+#selectStyle {
+  height: 100px;
+  overflow: hidden;
+  width: 470px;
+}
+</style>
+
+<center>
+     <strong>
+    <div class="frm">
+
+        <form name="myForm" action="/home/code"  method="post"  >
+{% csrf_token %}
+
+
+<input type="submit" class="button" value="Scrap from YouTube">
+</form>
+
+    </div>
+    <div class="frm">
+
+              <h1> Please upload your csv file </h1> <br>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row content">
+                        <div class="col"> <br>
+                            <input type="file" name="document" id="document" required="required">
+                        </div>
+
+                         <div class="col">
+                             <p id="id"> Attribute ID</p>
+                            <input type="text" name="attributeid" id="attributeid" required="required">
+                        </div>
+<br><br>
+                         <div class="col">
+                        <center>  <button id="submit" class="btn-primary"> Upload</button></center>
+                        </div>
+                    </div>
+                </form>
+        <br>
+
+    {% block messages %}
+        {% if messages %}
+            <div class="container" style="color: firebrick; margin-top: 10px" >
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endblock %}
+              </div>
+</div>
+</div>
+
+    <div class="frm">
+        <label class="button">
+            Choose csv file: <input type="file" id="inputFile" accept=".csv"  style="display: none;"  ></label>
+        <br/><br/>
+
+<form name="myForm" action="/index/getSentiment"  method="post"  >
+  <div>
+{% csrf_token %}
+
+          <h3><label for="selectBox" >Enter your sentence please:</label></h3>
+
+          <h2>  <select   style=" width: 470px !important height: 40px !important;" id="selectBox"    name="selectBox"></select></h2>
+  </div>
+<input type="submit" class="button" value="Predict sentence opinion">
+</form>
+    </div>
+     </strong>
+
+
+
+
+
+  <div class="twt"> <h2><strong>{{twt}} </strong></h2>
+  </div>
+
+   <div class="result"> <h2><strong>{{result}} </strong></h2> </div>
+    <div class="result1"><h2><strong>{{result1}} </strong> </h2></div>
+
+</div>
+
+</center>
+        </div>
+
+
+</body>
+</html>
+
+
+<script>
+
+$("#inputFile").on("change", handleFile);
+
+var renderCSVDropdown = function(csv) {
+  var dropdown = $('#selectBox');
+  var elements = csv.split(",");
+  for (var i = 0; i < elements.length; i++) {
+    var record = elements[i];
+    var entry = $('<option>', {value: record, text: record})
+    dropdown.append(entry);
+
+  }
+};
+
+function handleFile() {
+    var file = $(this).prop('files')[0];
+    var fileReader = new FileReader();
+    fileReader.onload = function (evt) {
+      renderCSVDropdown(evt.target.result);
+    };
+    fileReader.readAsText(file, "UTF-8");
+
+};
+
+</script>
+
+
+
+
+
+
+

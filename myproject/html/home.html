@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>YouTube-Scrapper</title>
+  </head>
+  <body style="background-image:url(static/accounts/gris.jpg);">
+    <div class="container-fluid">
+      <div class="row" >
+
+        <div class="col-sm-12 mt-1 mb-1" style="font-family:'Georgia', serif;'; font-size: cover;">
+
+        <h1>  <center><b>مرحبا بكم </b><br>
+
+          </center></h1>
+            <center>
+          {% load static %}
+          <img src="{% static 'accounts/tunis.jpg' %}"  height="300" width="1000"></center>
+
+
+          <audio controls autoplay>
+  <source src="static/accounts/audio.mp3" type="audio/mp3">
+  <p>Votre navigateur ne prend pas en charge l'audio HTML5. Voici, à la place, un <a href="static/accounts/audio.mp3">lien sur l'audio</a>.</p>
+</audio>
+
+<style>
+ .btn btn-outline-success {
+  border-radius: 40px;
+
+  background-color:   #DCDCDC;
+  color: white;
+  font-size: 40px;
+
+}
+.frm {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+  font-size: 20px;
+
+
+}
+
+</style>
+
+<center>
+      <div class="frm">
+
+          <form class="" action="/home/search" method="post">
+            {% csrf_token %} {{ form.as_p }}
+                <center>   <button class="btn btn-outline-success" type="submit" >Search</button></center>
+          </form>
+          <br>
+          <form class="" action="/home/code" method="post">
+            {% csrf_token %} {{ form.as_p }}
+            <center> <button class="btn btn-outline-success" type="submit" >Code</button></center>
+          </form>
+          <br>
+            <form class=""   action= "/index/getSentiment" method="post">
+            {% csrf_token %} {{ form.as_p }}
+                  <center> <button class="btn btn-outline-success" type="submit">Analyse</button></center>
+          </form>
+          <br>
+<form class=""   action= "/insert/getaspect" method="post">
+            {% csrf_token %} {{ form.as_p }}
+                  <center> <button class="btn btn-outline-success" type="submit">Statistics</button></center>
+          </form>
+
+        </div>
+
+
+    </center>
+</div></div></div>
+  </body>
+</html>

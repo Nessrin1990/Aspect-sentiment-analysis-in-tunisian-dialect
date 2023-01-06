@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body >
+
+<nav   class="navbar navbar-default">
+     <center> <h1>
+         <strong>
+             نظام ألي لتحليل الرأي  باللهجة التونسية في وسائل التواصل الاجتماعي
+</strong>
+             {% load static %}
+
+
+             <br>
+             <strong> O</strong>pinion <strong> A</strong>nalysis <strong>S</strong>ystem  for  <strong>T</strong>unisian <strong>D</strong>ialect in social media OAS-TD
+
+        </h1></center>
+
+{% load static %}
+     <center>      <img src="{% static 'accounts/images.jpg' %}"  height="250" width="250"></center>
+</nav>
+
+<style>
+
+.container {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin-left:170px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:900px;
+  padding:10px;
+  text-align: center;
+}
+.button {
+  border-radius: 25px;
+
+  background-color:  #008CBA;
+  color: white;
+  font-size: 20px;
+
+}
+
+
+.heading {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+}
+
+.frm {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+  font-size: 20px;
+
+
+}
+.result1.result {
+  border-radius: 25px;
+  margin-left:90px;
+  border:1px solid #eee;
+  padding:10px;
+  width:700px;
+  text-align: center;
+  font-size: 40px;
+}
+.result2{
+  background-color:  #008CBA;
+  color: white;
+   border-radius: 25px;
+  margin-left:90px;
+  border:1px solid #eee;
+  padding:10px;
+  width:700px;
+  text-align: center;
+  font-size: 40px;
+}
+.twt{
+border-radius: 25px;
+  border-radius: 25px;
+  margin-left:90px;
+  border:1px solid #eee;
+  padding:20px;
+  width:700px;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+#selectStyle {
+  height: 29px;
+  overflow: hidden;
+  width: 470px;
+}
+</style>
+
+<center>
+    <div class="frm">
+Choose csv file: <input type="file" id="inputFile" accept=".csv" style="display">
+        <br/><br/>
+
+<form name="myForm" action="/index/getSentiment"  method="post"  >
+  <div>
+{% csrf_token %}
+
+            <label for="selectBox" >Enter your sentence please:</label>
+
+            <select  id="selectBox"    name="selectBox"></select>
+  </div>
+<input type="submit" class="button" value="Predict sentence opinion">
+</form>
+ </div>
+
+
+
+  <div class="twt"><strong>{{twt}} </strong>
+  </div>
+   <h4> <div class="result"><strong>{{result}} </strong> </div>
+    <div class="result1"><strong>{{result1}} </strong> </div>
+           <div class="result2"><strong>{{result2}} </strong> </div>
+
+   </h4>
+</div>
+
+</center>
+        </div>
+
+
+</body></html>
+
+
+<script>
+$("#inputFile").on("change", handleFile);
+
+var renderCSVDropdown = function(csv) {
+  var dropdown = $('#selectBox');
+  var elements = csv.split(",");
+  for (var i = 0; i < elements.length; i++) {
+    var record = elements[i];
+    var entry = $('<option>', {value: record, text: record})
+    dropdown.append(entry);
+
+  }
+};
+
+function handleFile() {
+    var file = $(this).prop('files')[0];
+    var fileReader = new FileReader();
+    fileReader.onload = function (evt) {
+      renderCSVDropdown(evt.target.result);
+    };
+    fileReader.readAsText(file, "UTF-8");
+
+};
+</script>
+
+
+
+
+
+
+
