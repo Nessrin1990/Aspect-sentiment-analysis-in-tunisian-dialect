@@ -33,4 +33,6 @@ Pre-processing: Transliteration : We transliterate all Tunisian Arabizi comments
 
 Django Application to resume the project.
 ![image](https://user-images.githubusercontent.com/104040980/211173928-79c898a1-26e0-488d-940a-0a3c1925f783.png)
+![image](https://user-images.githubusercontent.com/104040980/211174021-e5b53468-64f9-495c-8d5d-4364762f2b7f.png)
+
 
