@@ -6,7 +6,8 @@ this work aims to study the use of deep machine learning on the analysis of the 
 The methodology  consists to  extract of aspects using morphological labeling and ontology 
 Scrapping from Youtube.
 
-Pre-processing: Transliteration : We transliterate all Tunisian Arabizi comments into Tunisian Arabic
+Pre-processing: Transliteration : We transliterate all Tunisian Arabizi comments into Tunisian Arabic.
+
                 Light Stemming. The light stemming consists of eliminating both prefixes and suf-fixes of the word.
                 Data cleaning. The aim of the Data cleaning is to remove words, signs and punctua-tions that have no interest for sentiment analysis and that could make                               the learning process time consuming. Thus, we remove all stop words (i.e. also called empty words), URLs, user mentions, punctuation signs                              and duplicated or redundant letters in words. 
                 
