@@ -18,8 +18,9 @@ Pre-processing: Transliteration : We transliterate all Tunisian Arabizi comments
                     
  Ontology based method
                     
-       ![image](https://user-images.githubusercontent.com/104040980/204160869-2d9b9a64-511b-4a8a-8944-c13ff1a33984.png)             
-  Training with LSTM 
+  ![image](https://user-images.githubusercontent.com/104040980/204160869-2d9b9a64-511b-4a8a-8944-c13ff1a33984.png)             
+ 
+ Training with LSTM 
   
   
   ![image](https://user-images.githubusercontent.com/104040980/211173908-751ad811-654b-4284-8c21-77294b66aa9b.png)
