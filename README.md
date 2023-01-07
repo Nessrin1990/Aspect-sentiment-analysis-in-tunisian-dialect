@@ -16,17 +16,16 @@ Pre-processing: Transliteration : We transliterate all Tunisian Arabizi comments
  
  ![image](https://user-images.githubusercontent.com/104040980/204161099-1a273c4b-5257-44e2-9a5a-cb9caa5bd8d4.png)
                     
+ Ontology based method
                     
-                    Ontology based method
-                    
-                    
+       ![image](https://user-images.githubusercontent.com/104040980/204160869-2d9b9a64-511b-4a8a-8944-c13ff1a33984.png)             
   Training with LSTM 
   
   
   ![image](https://user-images.githubusercontent.com/104040980/211173908-751ad811-654b-4284-8c21-77294b66aa9b.png)
 
   Training with Bi-GRU
-![image](https://user-images.githubusercontent.com/104040980/204160869-2d9b9a64-511b-4a8a-8944-c13ff1a33984.png)
+
 
 ![image](https://user-images.githubusercontent.com/104040980/211173901-d03b27f7-1747-4f2d-8f99-fbc4e5e769dd.png)
 
