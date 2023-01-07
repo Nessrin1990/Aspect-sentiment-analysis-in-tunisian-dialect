@@ -5,6 +5,8 @@ this work aims to study the use of deep machine learning on the analysis of the 
 
 The methodology  consists to  extract of aspects using morphological labeling and ontology 
 Scrapping from Youtube.
+  ![image](https://user-images.githubusercontent.com/104040980/204160869-2d9b9a64-511b-4a8a-8944-c13ff1a33984.png)             
+
 
 Pre-processing: Transliteration : We transliterate all Tunisian Arabizi comments into Tunisian Arabic.
 
@@ -18,8 +20,9 @@ Pre-processing: Transliteration : We transliterate all Tunisian Arabizi comments
                     
  Ontology based method
                     
-  ![image](https://user-images.githubusercontent.com/104040980/204160869-2d9b9a64-511b-4a8a-8944-c13ff1a33984.png)             
  
+ ![image](https://user-images.githubusercontent.com/104040980/211174144-4e879413-6bd5-4f2b-8945-648e19318c7f.png)
+
  Training with LSTM 
   
   
